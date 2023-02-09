@@ -1,8 +1,9 @@
 package endpoint
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
+	"jaytube-upload-service/pkg/data"
 	"log"
 	"net/http"
 	"os"
@@ -13,14 +14,21 @@ func UploadVideo(c *gin.Context) {
 	file, _ := c.FormFile("file")
 	log.Println(file.Filename)
 
-	// Upload the file to specific dst.
-	os.ReadFile(os.Getenv("FILE_DESTINATION"))
-
-	err := c.SaveUploadedFile(file, "saved/"+file.Filename)
+	err := c.SaveUploadedFile(file, os.Getenv("FILE_DESTINATION")+"/"+file.Filename)
 	if err != nil {
 		c.String(http.StatusInternalServerError, err.Error())
 		return
 	}
+}
 
-	c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
+func CreateVideo(c *gin.Context) {
+	var videoData data.VideoDataPayload
+	if c.ShouldBindBodyWith(&videoData, binding.JSON) != nil {
+		c.JSON(http.StatusBadRequest, "Wrong JSON request body")
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"json": videoData,
+	})
 }

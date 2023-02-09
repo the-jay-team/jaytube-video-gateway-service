@@ -18,6 +18,7 @@ func main() {
 	r := gin.Default()
 
 	r.POST("/upload", endpoint.UploadVideo)
+	r.POST("/create", endpoint.CreateVideo)
 
 	err = r.Run(":8083")
 	if err != nil {
