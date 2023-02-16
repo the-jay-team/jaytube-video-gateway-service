@@ -14,7 +14,11 @@ func NewPostVideo() *PostVideoEndpoint {
 }
 
 func (endpoint *PostVideoEndpoint) PostVideoData(context *gin.Context) {
-	file, err := context.FormFile("file")
+	if context.Param("id") == "" {
+		context.JSON(http.StatusBadRequest, "Missing video id!")
+	}
+
+	file, err := context.FormFile("video")
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, err)
 		return
@@ -24,5 +28,5 @@ func (endpoint *PostVideoEndpoint) PostVideoData(context *gin.Context) {
 		return
 	}
 
-	context.JSON(http.StatusOK, file.Filename)
+	context.JSON(http.StatusOK, "")
 }

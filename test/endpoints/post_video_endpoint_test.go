@@ -12,7 +12,15 @@ import (
 
 func TestPostWrongFileFormatReturnsBadRequest(t *testing.T) {
 	record, context := test.GinTestSetup()
-	context.Request, _ = http.NewRequest(http.MethodPost, "/video", nil)
+
+	body := &bytes.Buffer{}
+	writer := multipart.NewWriter(body)
+	_, _ = writer.CreateFormFile("video", "test.png")
+	_ = writer.Close()
+
+	context.Request, _ = http.NewRequest(http.MethodPost, "/video/:id", body)
+	context.AddParam("id", "1")
+	context.Request.Header.Set("Content-Type", writer.FormDataContentType())
 
 	testEndpoint := endpoints.NewPostVideo()
 	testEndpoint.PostVideoData(context)
@@ -22,16 +30,17 @@ func TestPostWrongFileFormatReturnsBadRequest(t *testing.T) {
 
 func TestPostVideoReturnsOk(t *testing.T) {
 	record, context := test.GinTestSetup()
+
 	body := &bytes.Buffer{}
 	writer := multipart.NewWriter(body)
 	_, _ = writer.CreateFormFile("video", "test.mp4")
 	_ = writer.Close()
 
-	context.Request, _ = http.NewRequest(http.MethodPost, "/video", bytes.NewReader(body.Bytes()))
-	context.Request.Header.Set("Content-Type", "multipart/form-data")
-	
+	context.Request, _ = http.NewRequest(http.MethodPost, "/video", body)
+	context.Request.Header.Set("Content-Type", writer.FormDataContentType())
+
 	testEndpoint := endpoints.NewPostVideo()
 	testEndpoint.PostVideoData(context)
 
-	assert.Equal(t, http.StatusBadRequest, record.Code)
+	assert.Equal(t, http.StatusOK, record.Code)
 }
