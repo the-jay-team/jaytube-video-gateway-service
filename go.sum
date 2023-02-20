@@ -148,6 +148,14 @@ github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217125
 github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217125309-475fc4038bc6/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
 github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217130139-8f0d323efb69 h1:5pFmOcirRdbPVOrevJLkWjkSrsuJV5eksHccL2G86qE=
 github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217130139-8f0d323efb69/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217134106-13471bf5ee51 h1:BtNR4HqlqsFMrIr4UmEW6CCpzCYLqh7FKpHfbz3qODc=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217134106-13471bf5ee51/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217140807-742675e82fe7 h1:Metz3YT0UISpmbDHu9J62cJjdLfK/UrbJbDyd8QCQ+M=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230217140807-742675e82fe7/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230218153817-88fbab7d698f h1:wFtHtf3ES4NAhMfYW2cw8KvwtLANSnBB8FEsok2mMTQ=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230218153817-88fbab7d698f/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230218154553-8746d404f6b1 h1:f4WWQ9hbbjY/1nFB+mogEyWDHV7nMY34ePqoMnWHEHs=
+github.com/the-jay-team/jaytube-content-information-service v1.0.1-0.20230218154553-8746d404f6b1/go.mod h1:SXUhBBMcZJhJdtbRUfsav1K1RpDUZMDtS4H/Dna145g=
 github.com/ugorji/go/codec v1.2.9 h1:rmenucSohSTiyL09Y+l2OCk+FrMxGMzho2+tjr5ticU=
 github.com/ugorji/go/codec v1.2.9/go.mod h1:UNopzCgEMSXjBc6AOMqYvWC1ktqTAfzJZUZgYf6w6lg=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
